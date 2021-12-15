@@ -14,6 +14,8 @@ As for what it does, it makes code look different. Here's an example:
 
 More details and examples in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
+One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to provide the editor with a certain view of the code. Changing the view doesn't change the code.
+
 ## Work In Progress
 Work on this hasn't begun yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  
 

@@ -8,7 +8,7 @@ First, what it does *not* do: it makes __absolutely no changes to the syntax.__
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look different. Here's an example:
+As for what it does, it makes code look nicer. Here's an example:
 
 ![example code](https://benhsz.github.io/images/lbp/lbp.png)
 

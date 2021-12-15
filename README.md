@@ -1,7 +1,7 @@
 # Parsvelte
 Parsvelte is the name of the DrRacket plugin that aims to implement Adaptive Code Visualization, first loosely described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
 
-The purpose of this feature is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
+The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 
 ## What Does It Do?
 First, what it does *not* do: it makes __absolutely no changes to the syntax.__  

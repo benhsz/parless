@@ -22,4 +22,4 @@ Work on this hasn't begun yet, although the [implementation plan](steps-to-imple
 Steps completed: 0/7
 
 ## License
-[MIT License](LICENSE.md)
+[MIT License](LICENSE)

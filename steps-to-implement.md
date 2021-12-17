@@ -67,7 +67,7 @@ For example if the very first opening parenthesis is selected from the above cod
 
 # Step 4
 
-Make faded-out parentheses invisible if no cursor is present (either text cursor or mouse cursor).
+If no cursor is present (either text cursor or mouse cursor), fade out the appropriate parentheses *completely*, thus rendering them invisible. 
 
 That means with no cursor present on any of the following lines of code, the running example would look like this
 

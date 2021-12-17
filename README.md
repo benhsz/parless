@@ -4,7 +4,7 @@ Parsvelte is a DrRacket plugin that aims to implement Adaptive Code Visualizatio
 The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 
 ## What Does It Do?
-First, what it doesn't do: it makes __absolutely no changes to the syntax.__  
+First, what it doesn't do: it makes __absolutely no changes to the syntax__ and therefore has __no significant indentation__.  
 
 The programmer will type just as many opening and closing parentheses as before.  
 
@@ -15,6 +15,8 @@ As for what it does, it makes code look nicer. Here's an example:
 More details and examples in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
 One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to provide the editor with a certain view of the code. Changing the view doesn't change the code.
+
+Thus parsvelte is compatible with all existing Lisp code.
 
 ## Work In Progress
 Work on this hasn't begun yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  

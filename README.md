@@ -10,7 +10,7 @@ It makes __absolutely no changes to the syntax__ and therefore has __no signific
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look nicer (i.e. svelte parentheses). Here's an example:
+As for what it does, it makes code look nicer (svelte parentheses). Here's an example:
 
 ![example code](https://benhsz.github.io/images/lbp/lbp.png)
 

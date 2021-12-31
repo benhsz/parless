@@ -10,15 +10,29 @@ It makes __absolutely no changes to the syntax__ and therefore has __no signific
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look nicer (svelte parentheses). Here's an example:
+As for what it does, it makes code look nicer (svelte parentheses).
 
-![example code](https://benhsz.github.io/images/lbp/lbp.png)
+An example of code and a mockup below it that shows the result.
 
-More details and examples in the [implementation plan](steps-to-implement.md) and the above linked blog post.
+    (define (factorial n)
+      (if (zero? n)
+          1
+          (* n (factorial (sub1 n)))))
+
+![example code](https://benhsz.github.io/images/parsvelte/parsvelte.png)
+
+An animated mockup, showing some interaction with the cursor:
+
+![animation](https://benhsz.github.io/images/parsvelte/mouse-over.gif)
+
+Another, larger [mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.png) 
+([source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).
+
+More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
 One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to provide the editor with a certain view of the code. Changing the view doesn't change the code.
 
-Thus parsvelte is compatible with all existing Lisp code.
+Therefore, it should be compatible with all existing Lisp code.
 
 ## Work In Progress
 Work on this hasn't begun yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  

@@ -14,10 +14,12 @@ As for what it does, it makes code look nicer (svelte parentheses).
 
 An example of code and a mockup below it that shows the result.
 
-    (define (factorial n)
-      (if (zero? n)
-          1
-          (* n (factorial (sub1 n)))))
+```racket
+(define (factorial n)
+  (if (zero? n)
+      1
+      (* n (factorial (sub1 n)))))
+```
 
 ![example code](https://benhsz.github.io/images/parsvelte/parsvelte.png)
 

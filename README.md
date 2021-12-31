@@ -32,7 +32,7 @@ Another, larger [mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.
 
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
-One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with a another view of the code__. Changing the view doesn't change the code.
+One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code.
 
 Therefore, it should be compatible with all existing Lisp code.
 

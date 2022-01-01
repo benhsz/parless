@@ -27,8 +27,8 @@ An animated mockup, showing some interaction with the cursor:
 
 ![animation](https://benhsz.github.io/images/parsvelte/mouse-over.gif)
 
-Another, larger [mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.png) 
-([source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).
+[A larger mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.png) 
+(from [source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).
 
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 

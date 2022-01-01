@@ -21,6 +21,7 @@ For instance, this code:
       (* n (factorial (sub1 n)))))
 ```
 Would appear as:
+
 ![example code](https://benhsz.github.io/images/parsvelte/parsvelte3.png)
 
 An animated mockup showing interaction with the cursor:

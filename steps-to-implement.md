@@ -18,7 +18,7 @@ When the expression is finished, the shape will turn into `(`.
 
     (define X 5)
     
-This means that `(` will only visualize when it has a matching closing parens. (Unless it's in a comment.) 
+This means that `(` will only visualize when it has a matching closing parens. 
 
 # Step 2
 

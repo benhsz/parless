@@ -12,7 +12,7 @@ The programmer will type just as many opening and closing parentheses as before.
 
 As for what it does, it makes code look nicer (svelte parentheses).
 
-An example of code and a mockup below it that shows the result.
+Example code and a mockup below it showing the result:
 
 ```racket
 (define (factorial n)
@@ -21,11 +21,11 @@ An example of code and a mockup below it that shows the result.
       (* n (factorial (sub1 n)))))
 ```
 
-![example code](https://benhsz.github.io/images/parsvelte/parsvelte.png)
+![example code](https://benhsz.github.io/images/parsvelte/parsvelte3.png)
 
-An animated mockup, showing some interaction with the cursor:
+An animated mockup showing interaction with the cursor:
 
-![animation](https://benhsz.github.io/images/parsvelte/mouse-over.gif)
+![animation](https://benhsz.github.io/images/parsvelte/mouse-over3.gif)
 
 [A larger mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.png) 
 (from [source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).

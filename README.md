@@ -12,7 +12,7 @@ The programmer will type just as many opening and closing parentheses as before.
 
 As for what it does, it makes code look nicer (svelte parentheses).
 
-Example code and a mockup below it showing the result:
+For instance, this code:
 
 ```racket
 (define (factorial n)
@@ -20,7 +20,7 @@ Example code and a mockup below it showing the result:
       1
       (* n (factorial (sub1 n)))))
 ```
-
+Would appear as:
 ![example code](https://benhsz.github.io/images/parsvelte/parsvelte3.png)
 
 An animated mockup showing interaction with the cursor:

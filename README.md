@@ -28,20 +28,20 @@ An animated mockup showing interaction with the cursor:
 
 ![animation](https://benhsz.github.io/images/parsvelte/mouse-over3.gif)
 
-What it would look like if the running example is missing one closing parenthesis:
+If the running example is missing one closing parenthesis:
 
 ```racket
-┃define (factorial n)
-   if ▸zero? n
+●define (factorial n)
+   if ·zero? n
       1
-      ▸* n (factorial (sub1 n)
+      ·* n (factorial (sub1 n)
 ```
 Or has the right amount of parentheses but is not indented correctly:
 ```racket
  define (factorial n)
-    → if ▸zero? n
+    → if ·zero? n
       1
-      ▸* n (factorial (sub1 n)
+      ·* n (factorial (sub1 n)
 ```
 
 

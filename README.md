@@ -13,7 +13,7 @@ It makes __absolutely no changes to the syntax__ and therefore has __no signific
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look nicer (less parentheses).
+As for what it does, it makes code look nicer.
 
 For instance, this code:
 

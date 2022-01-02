@@ -1,5 +1,5 @@
-# Parsvelte
-Parsvelte is a DrRacket plugin that implements Adaptive Code Visualization, first loosely described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
+# Parless
+Parless is a DrRacket plugin that implements Adaptive Code Visualization, first loosely described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
 
 The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 

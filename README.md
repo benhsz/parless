@@ -91,15 +91,12 @@ Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
   "Choose an element from a list at random."
    elt choices (random (length choices)
   ```
-
-[A larger mockup](https://benhsz.github.io/images/parless/repeat-pasta.png) 
-(from [source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).
-
+  
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
 One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code.
 
-Therefore, it should be compatible with all existing Lisp code.
+It should therefore be compatible with all existing Lisp code.
 
 ## Work In Progress
 Work on this hasn't begun yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  

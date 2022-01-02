@@ -3,6 +3,11 @@ Parless is a DrRacket plugin that implements Adaptive Code Visualization, first 
 
 The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 
+## Work In Progress
+No working implementation as of yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  
+
+Steps completed: 0/7
+
 ## What Does It Do?
 First, what it doesn't do: 
 
@@ -97,11 +102,6 @@ More details and examples are in the [implementation plan](steps-to-implement.md
 One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code.
 
 It should therefore be compatible with all existing Lisp code.
-
-## Work In Progress
-Work on this hasn't begun yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.  
-
-Steps completed: 0/7
 
 ## License
 [MIT License](LICENSE)

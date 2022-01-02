@@ -56,13 +56,13 @@ Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
     ▹verb-phrase -> (Verb noun-phrase)
     ▹Article -> the a
     ▹Noun -> man ball woman table
-    ▹Verb -> hit took saw liked 
+    ▹Verb -> hit took saw liked)
   "A grammar for a trivial subset of English."
 
  defun generate (phrase)
   "Generate a random sentence or phrase"
    cond (▹listp phrase
-         ▹mappend #'generate phrase 
+         ▹mappend #'generate phrase)
         (▹rewrites phrase
          ▹generate (random-elt (rewrites phrase)
         (t (list phrase)
@@ -71,7 +71,7 @@ Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
   "Generate a random sentence or phrase,
   with a complete parse tree."
    cond (▹listp phrase
-         ▹mapcar #'generate-tree phrase
+         ▹mapcar #'generate-tree phrase)
         (▹rewrites phrase
           cons phrase
                (generate-tree (random-elt (rewrites phrase)

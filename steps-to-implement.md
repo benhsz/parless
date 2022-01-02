@@ -2,7 +2,7 @@
 
 Give opening parentheses with no closing counterparts a different appearance.
 
-Decide on an appropriate shape, such as `▯, ▮, ◖ or ┃` (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
+Decide on an appropriate shape, such as `●, ▯, ▮, ◖` or `┃` (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
 
 The result is to have that shape show up when you type `(` in the editor.
 
@@ -12,7 +12,7 @@ Code would go from looking like this
 
 to
 
-    ▯define X
+    ●define X
 
 When the expression is finished, the shape will turn into `(`.
 

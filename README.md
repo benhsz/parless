@@ -22,11 +22,11 @@ For instance, this code:
 ```
 Would appear as:
 
-![example code](https://benhsz.github.io/images/parsvelte/parsvelte3.png)
+![example code](https://benhsz.github.io/images/parless/parless.png)
 
 An animated mockup showing interaction with the cursor:
 
-![animation](https://benhsz.github.io/images/parsvelte/mouse-over3.gif)
+![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
 
 If the running example is missing one closing parenthesis:
 

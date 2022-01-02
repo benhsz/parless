@@ -32,44 +32,44 @@ If the running example is missing one closing parenthesis:
 
 ```racket
 ●define (factorial n)
-   if ·zero? n
+   if ▹zero? n
       1
-      ·* n (factorial (sub1 n)
+      ▹* n (factorial (sub1 n)
 ```
 
 Or has the right amount of parentheses but is not indented correctly:
 ```racket
  define (factorial n)
-    → if ·zero? n
+    → if ▹zero? n
       1
-      ·* n (factorial (sub1 n)
+      ▹* n (factorial (sub1 n)
 ```
 Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
 
 ```lisp
  defparameter *grammar*
-  '(·sentence -> (noun-phrase verb-phrase)
-    ·noun-phrase -> (Article Noun)
-    ·verb-phrase -> (Verb noun-phrase)
-    ·Article -> the a
-    ·Noun -> man ball woman table
-    ·Verb -> hit took saw liked 
+  '(▹sentence -> (noun-phrase verb-phrase)
+    ▹noun-phrase -> (Article Noun)
+    ▹verb-phrase -> (Verb noun-phrase)
+    ▹Article -> the a
+    ▹Noun -> man ball woman table
+    ▹Verb -> hit took saw liked 
   "A grammar for a trivial subset of English."
 
  defun generate (phrase)
   "Generate a random sentence or phrase"
-   cond (·listp phrase
-         ·mappend #'generate phrase 
-        (·rewrites phrase
-         ·generate (random-elt (rewrites phrase)
+   cond (▹listp phrase
+         ▹mappend #'generate phrase 
+        (▹rewrites phrase
+         ▹generate (random-elt (rewrites phrase)
         (t (list phrase)
 
  defun generate-tree (phrase)
   "Generate a random sentence or phrase,
   with a complete parse tree."
-   cond (·listp phrase
-         ·mapcar #'generate-tree phrase
-        (·rewrites phrase
+   cond (▹listp phrase
+         ▹mapcar #'generate-tree phrase
+        (▹rewrites phrase
           cons phrase
                (generate-tree (random-elt (rewrites phrase)
         (t (list phrase)

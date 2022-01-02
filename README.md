@@ -45,7 +45,7 @@ Or has the right amount of parentheses but is not indented correctly:
 ```
 
 
-[A larger mockup](https://benhsz.github.io/images/parsvelte/repeat-pasta.png) 
+[A larger mockup](https://benhsz.github.io/images/parless/repeat-pasta.png) 
 (from [source](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/fasta-racket-3.html)).
 
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.

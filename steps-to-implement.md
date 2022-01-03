@@ -52,37 +52,41 @@ would appear as
 
 # Step 3
 
-Fade out (to a certain degree) parentheses that (a) start at the very beginning of a line and (b) are not part of a 'list-like format'.
+Make parentheses that satisfy the right conditions appear as ` ` (blank). Those conditions would be: if it starts at the very beginning of a line and (b) is __not__ part of a 'list-like format' and (c) is __not__ preceded by another character, such as `'`, another `(`.
 
-For the code below that would be the ones that start `define` and `if`, but not `*` because it's part of that format.
+For the code below that would be the ones that start `define` and `if`, but not `*` because it doesn't satisfy (b).
 
     (define (factorial n)
       (if (zero? n)
           1
           (* n (factorial (sub1 n)))))
 
-Closing parentheses that pile-up should also be faded out.
+Closing parentheses that pile-up at the end should also be made blank.
 For the above example that would be all the closing parentheses after `(sub1 n)`
 
 If selected, these parentheses would no longer be faded-out, including their counterparts.
-For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer faded-out as well.
+For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer blank as well.
 
 # Step 4
 
-If no cursor is present (either text cursor or mouse cursor), fade out the appropriate parentheses *completely*, thus rendering them invisible. 
+If a cursor is present on a line (either text cursor or mouse cursor), the parentheses made blank in step 3 should re-appear on that line.
 
-That means with no cursor present on any of the following lines of code, the running example would look like this
+So without a cursor anywhere you should see this:
 
      define (factorial n)
        if (zero? n)
           1
           (* n (factorial (sub1 n)
+          
+But then with a cursor present, for instance on the first line, it would show
 
-If a cursor is present on the last line above, it would cause every closing parentheses to reappear on that line. If a cursor were present on the very first line, it would show the opening parenthesis of the define expression, etc.
+    (define (factorial n)
+
+And so on.
 
 # Step 5
 
-Experiment with the list-like formatting: have `(` appear as `|` and fade out its closing counterpart.
+Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and fade out its closing counterpart.
 The if expression below has such a format.
 
 So this
@@ -95,17 +99,15 @@ So this
 would appear as
 
      define (factorial n)
-       if |zero? n
+       if ▹zero? n
           1
-          |* n (factorial (sub1 n)
-
-Consider an alternative shape if showing a `|` bar would be confusing.
+          ▹* n (factorial (sub1 n)
 
 # Step 6
 
 The next step could be to provide customization options for the user, such as being able to:
-- Adjust the shape for unfinished opening parens
-- Modify what the editor should consider 'unexpected indentation'
+- Choose the shape for unfinished opening parens
+- Adjust what the editor should consider 'unexpected indentation'
 - Decide whether parentheses in commented-out code should be affected ('no' as default?)
 
 # Step 7

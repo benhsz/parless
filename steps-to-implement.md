@@ -61,9 +61,9 @@ For expressions formatted on a single-line, the conditions are:
 For expressions formatted on more than one line, the conditions are:
 1. `(` is the first character on the line
 2. Expressions within it are indented
-3. `(` is __not__ formatted below another `(` belonging to a 'list-like format'
+3. `(` is __not__ formatted below another `(`
 
-For the code below that would be the ones that start `(define` and `(if`, but not `(*` because it doesn't satisfy (b).
+For the code below that would be the ones that start `(define` and `(if`, but not `(*` because it doesn't satisfy (3).
 
     (define (factorial n)
       (if (zero? n)

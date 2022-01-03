@@ -9,11 +9,11 @@ No working implementation as of yet, although the [implementation plan](steps-to
 ## What Does It Do?
 First, what it doesn't do: 
 
-It makes __NO CHANGE TO THE SYNTAX__ and therefore has __NO SIGNIFICANT INDENTATION__.  
+It makes __no change to the syntax__ and therefore has __has significant indentation__.  
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look nicer by having the editor variously visualize `()` as `●`, `▹`, ` ` (blank) and `()`. Which shape goes where depends on the formatting. (The shapes can be adjusted according to the user's preferences, but these are the ones used in the examples shown here.)
+As for what it does, it makes code look nicer by having the editor variously visualize `()` as ` ` (blank), `●`, `▹`,  and `()`. Which shape goes where depends on the formatting. (The shapes can be adjusted according to the user's preferences, but these are the ones used in the examples.)
 
 For instance, this code:
 

@@ -52,24 +52,30 @@ would appear as
 
 # Step 3
 
-Make parentheses that satisfy the right conditions appear as ` ` (blank). Those conditions would be: if it starts at the very beginning of a line and (b) is __not__ part of a 'list-like format' and (c) is __not__ preceded by another character, such as `'`, another `(`.
+Make parentheses that satisfy the right conditions appear as ` ` (blank). If these conditions are not satisfied, `()` will remain as `()`.
 
-For the code below that would be the ones that start `define` and `if`, but not `*` because it doesn't satisfy (b).
+For expressions formatted on a single-line, the conditions are:
+1. `(` is the first character on the line
+2. `)` is the last character on the line
+
+For expressions formatted on more than one line, the conditions are:
+1. `(` is the first character on the line
+2. Expressions within it are indented
+3. `(` is __not__ formatted below another `(` belonging to a 'list-like format'
+
+For the code below that would be the ones that start `(define` and `(if`, but not `(*` because it doesn't satisfy (b).
 
     (define (factorial n)
       (if (zero? n)
           1
           (* n (factorial (sub1 n)))))
 
-Closing parentheses that pile-up at the end should also be made blank.
-For the above example that would be all the closing parentheses after `(sub1 n)`
-
-If selected, these parentheses would no longer be faded-out, including their counterparts.
-For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer blank as well.
+Any closing parentheses after the last expression should also be made blank.
+For the above example that would be all closing parentheses after `(sub1 n)`.
 
 # Step 4
 
-If a cursor is present on a line (either text cursor or mouse cursor), the parentheses made blank in step 3 should re-appear on that line.
+If a cursor is present on a line (either text cursor or mouse cursor), the parentheses made blank in step 3 should re-appear, slightly faded-out, on that line.
 
 So without a cursor anywhere you should see this:
 
@@ -84,10 +90,17 @@ But then with a cursor present, for instance on the first line, it would show
 
 And so on.
 
+If either `(` or `)` is selected, that parens as well as its matching parens would become fully visible.
+For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer blank as well.
+
 # Step 5
 
-Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and fade out its closing counterpart.
-The if expression below has such a format.
+Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and have its closing paren appear blank.
+
+The conditions for this format are:
+1. The first expression of the list is __not__ preceded by space or tab characters
+2. `(` is not immediately followed by another `(`
+3. There is one or more expression formatted below it that __is__ preceded by space or tab characters 
 
 So this
 
@@ -103,6 +116,18 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
+Notice in the next example how this cond expression has expressions that seem to satisfy the conditions but ultimately remain as `(` because it is followed by another `(` (which then ended up satisfying the conditions). If this happens, there should be a closing paren one the line where that expression ends.
+
+```lisp
+defun generate (phrase)
+  "Generate a random sentence or phrase"
+   cond (▹listp phrase
+         ▹mappend #'generate phrase)
+        (▹rewrites phrase
+         ▹generate (random-elt (rewrites phrase)
+        (t (list phrase)
+ ```
+
 # Step 6
 
 The next step could be to provide customization options for the user, such as being able to:
@@ -113,3 +138,15 @@ The next step could be to provide customization options for the user, such as be
 # Step 7
 
 Experiment further.
+
+'Nested pairs of expressions' could be an interesting place to start.
+
+For instance
+
+    (let loop-i ([i 0] [px 0.0] [py 0.0] [pz 0.0])
+      ...
+
+Could be rendered as
+
+     let loop-i ( i 0 · px 0.0 · py 0.0 · pz 0.0 )
+      ...

@@ -9,11 +9,11 @@ No working implementation as of yet, although the [implementation plan](steps-to
 ## What Does It Do?
 First, what it doesn't do: 
 
-It makes __absolutely no changes to the syntax__ and therefore has __no significant indentation__.  
+It makes __NO CHANGE TO THE SYNTAX__ and therefore has __NO SIGNIFICANT INDENTATION__.  
 
 The programmer will type just as many opening and closing parentheses as before.  
 
-As for what it does, it makes code look nicer.
+As for what it does, it makes code look nicer by having the editor variously visualize `()` as `●`, `▹`, ` ` (blank) and `()`. Which shape goes where depends on the formatting. (The shapes can be adjusted according to the user's preferences, but these are the ones used in the examples shown here.)
 
 For instance, this code:
 
@@ -97,7 +97,7 @@ Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
   
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
-One way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code.
+Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code.
 
 It should therefore be compatible with all existing Lisp code.
 

@@ -1,5 +1,5 @@
 # Parless
-Parless is a DrRacket plugin that implements Adaptive Code Visualization, first loosely described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
+Parless is a DrRacket plugin that implements Adaptive Code Visualization, first described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
 
 The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 
@@ -9,7 +9,7 @@ No working implementation as of yet, although the [implementation plan](steps-to
 ## What Does It Do?
 First, what it doesn't do: 
 
-It makes __no change to the syntax__ and therefore has __has significant indentation__.  
+It makes __no change to the syntax__ and therefore has __no significant indentation__.  
 
 The programmer will type just as many opening and closing parentheses as before.  
 

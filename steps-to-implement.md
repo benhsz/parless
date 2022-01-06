@@ -183,6 +183,6 @@ For example
 
      one (two (three (four))) (two (three (four)
     
-If it does look too strange, it might be best to just match the closing parenthesis.
+If it does look too strange, it might be best to just match the closing parentheses.
 
      one (two (three (four))) (two (three (four)))

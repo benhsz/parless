@@ -110,7 +110,7 @@ For example if the very first opening parenthesis is selected from the above cod
 
 NOTE: This step can be skipped.
 
-Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and have its closing paren appear blank. 
+Experiment with the list-like formatting: have `(` appear as another shape, such as `▹` or `|` and have its closing paren appear blank. 
 This only happens for expressions formatted on a single-line that are also part of another expression.
 
 The conditions for this format are:

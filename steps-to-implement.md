@@ -108,6 +108,8 @@ For example if the very first opening parenthesis is selected from the above cod
 
 # Step 5
 
+NOTE: This step can be skipped.
+
 Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and have its closing paren appear blank. 
 This only happens for a expressions formatted on a single-line that are also part of another expression.
 
@@ -117,9 +119,10 @@ The conditions for this format are:
 3. The first character immediately after `(` is __not__ another opening parenthesis
 4. Expressions below it are indented to match its formatting
 
-If the above conditions are not satisified then:
+Or:
+
 1. `(` is the first character on the line
-2. It is formatted below an expression that already satisfies the previous conditions
+2. It is formatted below an expression that satisfies the previous conditions
 
 So this
 
@@ -135,7 +138,7 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
-Notice in the next example how this cond expression has expressions that seem to satisfy the conditions but ultimately remain as `(` because it is followed by another `(` (which then ended up satisfying the conditions). If this happens, a closing paren one the line where that expression ends should appear. If there are already is one from another expression, there's no need to show an additional closing paren.
+In the following example the cond expression has expressions that seem to satisfy the conditions but the parens remain as `()` because `(` is followed by another `(` (which then ended up satisfying the conditions). If this happens, a closing paren one the line where that expression ends should appear. If there are already is one from another expression, there's no need to show an additional closing paren.
 
 ```lisp
 defun generate (phrase)

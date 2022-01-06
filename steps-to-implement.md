@@ -177,7 +177,7 @@ Could be rendered as
      let loop-i ( i 0 · px 0.0 · py 0.0 · pz 0.0 )
       ...
 
-Also, if making pile-ups of closing parens at the end of the line blank, it could look a bit odd if it's preceded by an expression does have a pile-up.
+Also, if making pile-ups of closing parens at the end of the line blank, it could look a bit odd if it's preceded by an expression that does have a pile-up.
 
 For example
 

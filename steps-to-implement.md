@@ -55,23 +55,36 @@ would appear as
 Make parentheses that satisfy the right conditions appear as ` ` (blank). If these conditions are not satisfied, `()` will remain as `()`.
 
 For expressions formatted on a single-line, the conditions are:
-1. `(` is the first character on the line
-2. `)` is the last character on the line
+1. `(` and `)` are respectively the first and last characters on the line
+2. It is not part of another expression
 
 For expressions formatted on more than one line, the conditions are:
 1. `(` is the first character on the line
 2. Expressions within it are indented
-3. `(` is __not__ formatted below another `(`
 
-For the code below that would be the ones that start `(define` and `(if`, but not `(*` because it doesn't satisfy (3).
+With this code
 
     (define (factorial n)
       (if (zero? n)
           1
           (* n (factorial (sub1 n)))))
+ 
+ The result would be
+ 
+     define (factorial n)
+       if (zero? n)
+          1
+          (* n (factorial (sub1 n)
 
 Any closing parentheses after the last expression should also be made blank.
 For the above example that would be all closing parentheses after `(sub1 n)`.
+
+The result would then be
+
+     define (factorial n)
+       if (zero? n)
+          1
+          (* n (factorial (sub1 n)
 
 # Step 4
 

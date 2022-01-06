@@ -1,3 +1,5 @@
+Completing steps 1 through 4 is likely enough to get most of the obenefits of parless. Steps beyond that are mostly to tidy things up a bit.  
+
 # Step 1
 
 Give opening parentheses with no closing counterparts a different appearance.

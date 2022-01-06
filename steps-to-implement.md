@@ -74,7 +74,7 @@ With this code
      define (factorial n)
        if (zero? n)
           1
-          (* n (factorial (sub1 n)
+          (* n (factorial (sub1 n)))))
 
 Any closing parentheses after the last expression should also be made blank.
 For the above example that would be all closing parentheses after `(sub1 n)`.
@@ -108,12 +108,18 @@ For example if the very first opening parenthesis is selected from the above cod
 
 # Step 5
 
-Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and have its closing paren appear blank.
+Experiment with the list-like formatting: have `(` appear as `▹` (or similar shape) and have its closing paren appear blank. 
+This only happens for a expressions formatted on a single-line that are also part of another expression.
 
 The conditions for this format are:
-1. The first expression of the list is __not__ preceded by space or tab characters
-2. `(` is not immediately followed by another `(`
-3. There is one or more expression formatted below it that __is__ preceded by space or tab characters 
+1. `(` is not the first character on the line
+2. The first character immediately before `(` is a space character or an opening parenthesis
+3. The first character immediately after `(` is __not__ another opening parenthesis
+4. Expressions below it are indented to match its formatting
+
+If the above conditions are not satisified then:
+1. `(` is the first character on the line
+2. It is formatted below an expression that already satisfies the previous conditions
 
 So this
 
@@ -129,7 +135,7 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
-Notice in the next example how this cond expression has expressions that seem to satisfy the conditions but ultimately remain as `(` because it is followed by another `(` (which then ended up satisfying the conditions). If this happens, there should be a closing paren one the line where that expression ends.
+Notice in the next example how this cond expression has expressions that seem to satisfy the conditions but ultimately remain as `(` because it is followed by another `(` (which then ended up satisfying the conditions). If this happens, a closing paren one the line where that expression ends should appear. If there are already is one from another expression, there's no need to show an additional closing paren.
 
 ```lisp
 defun generate (phrase)
@@ -163,3 +169,13 @@ Could be rendered as
 
      let loop-i ( i 0 · px 0.0 · py 0.0 · pz 0.0 )
       ...
+
+Also, if making pile-ups of closing parens at the end of the line blank, it could look a bit odd if it's preceded by an expression does have a pile-up.
+
+For example
+
+     one (two (three (four))) (two (three (four)
+    
+If it does look too strange, it might be best to just match the closing parenthesis.
+
+     one (two (three (four))) (two (three (four)))

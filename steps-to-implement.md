@@ -1,4 +1,4 @@
-Completing steps 1 through 4 is likely enough to get most of the benefits of parless. Steps beyond that are mostly to tidy things up a bit.  
+Completing steps 1 through 4 is likely enough to get most of the benefits of parless. Finishing the steps beyond that is primarily to tidy things up a bit.  
 
 # Step 1
 

@@ -142,18 +142,6 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
-In the following example the cond expression has expressions that seem to satisfy the conditions but the parens remain as `()` because `(` is followed by another `(` (which then ended up satisfying the conditions). If this happens, a closing paren one the line where that expression ends should appear. If there are already is one from another expression, there's no need to show an additional closing paren.
-
-```lisp
-defun generate (phrase)
-  "Generate a random sentence or phrase"
-   cond (▹listp phrase
-         ▹mappend #'generate phrase)
-        (▹rewrites phrase
-         ▹generate (random-elt (rewrites phrase)
-        (t (list phrase)
- ```
-
 # Step 6
 
 The next step could be to provide customization options for the user, such as being able to:

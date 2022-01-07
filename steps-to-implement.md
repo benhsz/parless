@@ -28,10 +28,12 @@ This means that `(` will only visualize when there's a matching closing parens.
 
 Provide visual cues to point out unexpected indentation.
 Decide what 'unexpected' indentation is, and decide on the kind of cues.
-Initial step could be to just use one arrow shape, such as →
+Initial step could be to just use simple arrow shapes, such as →
 
 It might also be best to start out with a 'strict' version of indentation, i.e. any code that deviates
 from what DrRacket considers proper indentation would show an arrow.
+
+Also decide what exactly the cues are supposed to point out.
 
 For example
 
@@ -42,16 +44,27 @@ would appear as
 
     (define X 5)
     → (define Y 4)
+    
+Then it would say something like 'this has been indented too far'.
 
-and
+Where as if it were to show an arrow like this
+
+    (define X 5)
+    ← (define Y 4)
+    
+Then it would say 'this belongs over there', and the presence of the arrow itself is enough to let the programmer know it's been indented correctly. 
+
+The latter case might be preferable for being more informative.
+
+Another example
 
     (define X 5)
      define Y 4
 
-would appear as
+This should appear as
 
     (define X 5)
-    →define Y 4
+    ←define Y 4
 
 
 # Step 3

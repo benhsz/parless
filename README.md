@@ -40,11 +40,19 @@ If the running example is missing one closing parenthesis:
       1
       ▹* n (factorial (sub1 n)
 ```
+Four missing closing parentheses:
 
+```racket
+●define (factorial n)
+  ●if ▹zero? n
+      1
+      ●* n ●factorial (sub1 n)
+```
 Or has the right amount of parentheses but is not indented correctly:
+
 ```racket
  define (factorial n)
-    → if ▹zero? n
+    ← if ▹zero? n
       1
       ▹* n (factorial (sub1 n)
 ```

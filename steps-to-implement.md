@@ -1,4 +1,4 @@
-Completing steps 1 through 4 is likely enough to get most of the benefits of parless.
+Completing steps 1 through 4 is likely enough to make it close to feature complete.
 
 Finishing the steps beyond that is primarily to tidy things up a bit.  
 

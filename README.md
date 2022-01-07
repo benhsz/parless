@@ -7,9 +7,12 @@ The goal is to improve the user experience of Lisp-like programming languages, s
 No working implementation as of yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature. Steps completed: 0/7
 
 ## What Does It Do?
-First, what it doesn't do: 
+First, the non-features: 
 
-It makes __no change to the syntax__ and therefore has __no significant indentation__. The programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
+* No change to the syntax
+* No significant indentation
+
+That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 
 As for what it does, it makes code look nicer by having the editor variously visualize `()` as ` ` (blank), `●`, `▹`,  and `()`. Which shape goes where depends on the formatting. (The shapes can be adjusted according to the user's preferences, but these are the ones used in the examples.)
 

@@ -113,15 +113,19 @@ For example if the very first opening parenthesis is selected from the above cod
 # Step 5
 
 Experiment with the list-like formatting: have `(` appear as another shape, such as `▹` or `|` and have its closing paren appear blank. 
-This only happens for expressions formatted on a single-line that are also part of another expression.
 
-The conditions for this format are:
+The conditions are:
+1. It is part of another expression
+2. It is formatted on a one line
+
+After that, it should satisfy either the first set of conditions or the second set. 
+
 1. `(` is not the first character on the line
 2. The first character immediately before `(` is a space character or an opening parenthesis
 3. The first character immediately after `(` is __not__ another opening parenthesis
-4. Expressions below it are indented to match its formatting
+4. One or more expression below it is indented to match its formatting
 
-Or:
+Or...
 
 1. `(` is the first character on the line
 2. It is formatted below an expression that satisfies the previous conditions
@@ -144,14 +148,14 @@ would appear as
 
 The next step could be to provide customization options for the user, such as being able to:
 - Choose the shape for unfinished opening parens
-- Adjust what the editor should consider 'unexpected indentation'
+- Adjust what the editor should consider 'unexpected indentation' and what the cues should look like
 - Decide whether parentheses in commented-out code should be affected ('no' as default?)
 
 # Step 7
 
 Experiment further.
 
-'Nested pairs of expressions' could be an interesting place to start.
+Nested pairs of expressions could be an interesting place to start.
 
 For instance
 
@@ -169,6 +173,12 @@ For example
 
      one (two (three (four))) (two (three (four)
     
-If it does look too strange, it might be best to just match the closing parentheses.
+If it does look too strange, it might be best to just visually match the closing parens.
 
      one (two (three (four))) (two (three (four)))
+
+Another possibility to avoid that visual imbalance could be to fade out the first `))` rather than make them blank.
+
+     one (two (three (four).. (two (three (four)
+     
+With `..` being where the faded-out `))` should be.

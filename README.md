@@ -30,7 +30,7 @@ Would appear as:
 
 Although it may appear to be ambiguous (i.e. *how do you know that* `if` *expression is actually parenthesized when it could actually be falsely indented?*) it is made entirely unambiguous by the following. 
 
-Here is the running example, but with one one closing parenthesis missing:
+Here is the running example, but with one closing parenthesis missing:
 
 ```racket
 ●define (factorial n)

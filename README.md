@@ -59,7 +59,7 @@ What allows the parentheses to be visually omitted without introducing ambiguity
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-With a decent amount of parentheses being outright *invisible*, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. With that particular purpose in mind, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor.
+With a decent amount of parentheses being outright *invisible*, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. With that particular purpose in mind, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor. Seen here in this animated mockup:
 
 ![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
 

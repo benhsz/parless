@@ -28,11 +28,9 @@ Would appear as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-An animated mockup showing interaction with the cursor:
+Although it may appear to be ambiguous (i.e. *how do you know that* `if` *expression is actually parenthesized when it could actually be falsely indented?*) it is made entirely unambiguous by the following. 
 
-![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
-
-If the running example is missing one closing parenthesis:
+Here is the running example, but with one one closing parenthesis missing:
 
 ```racket
 ●define (factorial n)
@@ -48,15 +46,24 @@ Four missing closing parentheses:
       1
       ●* n ●factorial (sub1 n)
 ```
-Or has the right amount of parentheses but is not indented correctly:
+Or with the right amount of parentheses but false indentation:
 
 ```racket
- define (factorial n)
+  ←   define (factorial n)
     ← if ▹zero? n
       1
       ▹* n (factorial (sub1 n)
 ```
-Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
+
+What allows the parentheses to be visually omitted without introducing ambiguity to the code is the *availability of these visual cues*. While functionally present at all times, they will only be *visually present* if something's wrong (missing parentheses for instance). If everything is in order (balanced parentheses, correctly indented) these cues will be *visually absent*, and so the code will look clean.
+
+![example code](https://benhsz.github.io/images/parless/parless.png)
+
+With a decent amount of parentheses being outright *invisible*, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. With that particular purpose in mind, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor.
+
+![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
+
+It should be possible to get this to work on all Lisps, not just Racket. Here's a larger example, in Common Lisp (source from http://norvig.com/python-lisp.html)
 
 ```lisp
  defparameter *grammar*
@@ -106,7 +113,7 @@ Larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
   
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
-Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code. Ultimately, this alternative view is not particularly radical, it's something of an overlay that hopefully makes the code more understandable.
+Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code. Ultimately, this alternative view is not particularly radical, it's something of an overlay that should make the code more understandable.
 
 ## License
 [MIT License](LICENSE)

@@ -14,7 +14,7 @@ First, the non-features:
 
 That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 
-As for what it does, it makes code look nicer by having the editor variously visualize `()` as ` ` (blank), `●`, `▹`,  and `()`. Which shape goes where depends on the formatting.
+As for what it does, it makes code look nicer by having the editor variously visualize `()` as ` ` (blank), `●`, `▹`,  and `()`. Which shape goes where depends on the code structure and formatting.
 
 For instance, this code:
 

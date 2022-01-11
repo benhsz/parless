@@ -52,7 +52,7 @@ Where as if it were to show an arrow like this
     (define X 5)
     ← (define Y 4)
     
-Then it would say 'this belongs over there', and the presence of the arrow itself is enough to let the programmer know it's been indented correctly. 
+Then it would say 'this belongs over there', and the presence of the arrow itself is enough to let the programmer know it's been indented incorrectly. 
 
 The latter case might be preferable for being more informative.
 

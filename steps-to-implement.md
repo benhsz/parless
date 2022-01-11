@@ -40,7 +40,7 @@ For example
     (define X 5)
       (define Y 4)
 
-would appear as
+could appear as
 
     (define X 5)
     → (define Y 4)
@@ -102,6 +102,16 @@ The result would then be
        if (zero? n)
           1
           (* n (factorial (sub1 n)
+          
+The last example in step 2 was this:
+
+    (define X 5)
+    ←define Y 4
+
+After having completed step 3, it would look like this:
+
+     define X 5 
+    ←define Y 4
 
 # Step 4
 

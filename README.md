@@ -9,8 +9,8 @@ No working implementation as of yet, although the [implementation plan](steps-to
 ## What Does It Do?
 First, the non-features: 
 
-* No change to the syntax
 * No significant indentation
+* No syntax changes of any kind
 
 That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 

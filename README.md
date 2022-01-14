@@ -28,7 +28,7 @@ Would appear as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-Although it may appear to be ambiguous (i.e. *how do you know that* `if` *expression is parenthesized when it could actually be falsely indented?*) it is made entirely unambiguous by the following. 
+Although it may appear to be ambiguous (i.e. *how do you know that* `if` *expression is parenthesized when it could actually be falsely indented?*) it is made unambiguous by the following. 
 
 Here is the running example, but with one closing parenthesis missing:
 

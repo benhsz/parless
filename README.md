@@ -16,7 +16,7 @@ That means the programmer will type just as many opening and closing parentheses
 
 As for what it does, it makes code look nicer by having the editor variously visualize parentheses as:
 
-1. Whitespace character
+1. Whitespace
 2. Padding character
 3. Unfinished expression character
 

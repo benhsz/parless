@@ -20,8 +20,6 @@ As for what it does, it makes code look nicer by having the editor variously vis
 2. Padding character
 3. Unfinished expression character
 
-Which shape goes where depends on the code structure and formatting.
-
 For instance, this code:
 
 ```racket

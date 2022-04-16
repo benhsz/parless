@@ -14,7 +14,7 @@ First, the non-features:
 
 That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 
-As for what it does, it makes code look nicer by having the editor variously visualize `()` as ` ` (blank), `●`, `▹`,  and `()`. Which shape goes where depends on the code structure and formatting.
+As for what it does, it makes code look nicer by having the editor variously visualize `()` as whitespace, `▹` or `▪`. Which shape goes where depends on the code structure and formatting.
 
 For instance, this code:
 
@@ -28,12 +28,12 @@ Would appear as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-Although it may appear to be ambiguous (i.e. *how do you know that* `if` *expression is parenthesized when it could actually be falsely indented?*) it is made unambiguous by the following. 
+But how do you know that `if` expression is parenthesized when it could be falsely indented? 
 
-Here is the running example, but with one closing parenthesis missing:
+The same example, but with one closing parenthesis missing:
 
 ```racket
-●define (factorial n)
+▪define (factorial n)
    if ▹zero? n
       1
       ▹* n (factorial (sub1 n)
@@ -41,53 +41,53 @@ Here is the running example, but with one closing parenthesis missing:
 Four missing closing parentheses:
 
 ```racket
-●define (factorial n)
-  ●if ▹zero? n
+▪define (factorial n)
+  ▪if ▹zero? n
       1
-      ●* n ●factorial (sub1 n)
+      ▪* n ▪factorial (sub1 n)
 ```
 Or with the right amount of parentheses but false indentation:
 
 ```racket
-  ←   define (factorial n)
-    ← if ▹zero? n
+  →   define (factorial n)
+    → if ▹zero? n
       1
       ▹* n (factorial (sub1 n)
 ```
 
-What allows the parentheses to be visually omitted without introducing ambiguity to the code is the *availability of these visual cues*. While functionally present at all times, they will only be *visually present* if something's wrong (missing parentheses for instance). If everything is in order (balanced parentheses, correctly indented) these cues will be *visually absent*, and so the code will look clean.
+What allows the parentheses to be visually omitted without introducing ambiguity to the code is the availability of these visual cues. These will visualize when something's amiss (missing parentheses for instance). If everything is in order (balanced parentheses, correctly indented) these cues will not visualize, and so the code will look clean and unambiguous.
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-With a decent amount of parentheses being outright *invisible*, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. With that particular purpose in mind, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor. Seen here in this animated mockup:
+Of course, with a decent amount of parentheses being outright invisible, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. For that reason, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor. Seen here in this animated mockup:
 
 ![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
 
-It should be possible to get this to work on all Lisps, not just Racket. Here's a larger example, in Common Lisp (source from http://norvig.com/python-lisp.html)
+Examples are in Racket but this should work for all Lisps. A larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
 
 ```lisp
  defparameter *grammar*
   '(▹sentence -> (noun-phrase verb-phrase)
-    ▹noun-phrase -> (Article Noun)
-    ▹verb-phrase -> (Verb noun-phrase)
-    ▹Article -> the a
-    ▹Noun -> man ball woman table
-    ▹Verb -> hit took saw liked)
+     noun-phrase -> (Article Noun)
+     verb-phrase -> (Verb noun-phrase)
+     Article -> the a
+     Noun -> man ball woman table
+     Verb -> hit took saw liked)
   "A grammar for a trivial subset of English."
 
  defun generate (phrase)
   "Generate a random sentence or phrase"
    cond (▹listp phrase
-         ▹mappend #'generate phrase)
+          mappend #'generate phrase)
         (▹rewrites phrase
-         ▹generate (random-elt (rewrites phrase)
+          generate (random-elt (rewrites phrase)
         (t (list phrase)
 
  defun generate-tree (phrase)
   "Generate a random sentence or phrase,
   with a complete parse tree."
    cond (▹listp phrase
-         ▹mapcar #'generate-tree phrase)
+          mapcar #'generate-tree phrase)
         (▹rewrites phrase
           cons phrase
                (generate-tree (random-elt (rewrites phrase)
@@ -113,7 +113,7 @@ It should be possible to get this to work on all Lisps, not just Racket. Here's 
   
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
-Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. Changing the view doesn't change the code. Ultimately, this alternative view is not particularly radical, it's something of an overlay that should make the code more understandable.
+Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__, so the code doesn't actually change. It's similar to syntax highlighting in that regard.
 
 ## License
 [MIT License](LICENSE)

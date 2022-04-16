@@ -65,7 +65,7 @@ What allows the parentheses to be visually omitted without introducing ambiguity
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-Of course, with a decent amount of parentheses being outright invisible, it could be a bit awkward if the user wishes to manually select and edit code as text with the cursor. For that reason, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor. Seen here in this animated mockup:
+Of course, with a decent amount of parentheses being outright invisible, it could be awkward if the user wishes to manually select and edit code as text with the cursor. For that reason, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor. Seen here in this animated mockup:
 
 ![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
 
@@ -119,7 +119,7 @@ Examples are in Racket but this should work for all Lisps. A larger example in C
   
 More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
 
-Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't actually change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__, so the code doesn't actually change. It's similar to syntax highlighting in that regard.
+Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. The code itself doesn't change at all. It's similar to syntax highlighting in that regard.
 
 ## License
 [MIT License](LICENSE)

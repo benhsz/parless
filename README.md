@@ -61,7 +61,7 @@ Or with the right amount of parentheses but false indentation:
       ▹* n (factorial (sub1 n)
 ```
 
-What allows the parentheses to be visually omitted without introducing ambiguity to the code is the availability of these visual cues. These will visualize when something's amiss (missing parentheses for instance). If everything is in order (balanced parentheses, correctly indented) these cues will not visualize, and so the code will look clean and unambiguous.
+What allows the parentheses to be visually omitted without introducing ambiguity is the availability of these visual cues. These will only visualize when something's amiss (missing closing parenthesis for instance). If everything is in order (balanced parentheses, correct indentation) these cues will not visualize, and so the code will look clean, but also unambiguous.
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 

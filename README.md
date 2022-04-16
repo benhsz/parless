@@ -34,7 +34,7 @@ Would appear as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-But how do you know that `if` expression is parenthesized when it could be falsely indented? 
+But how to tell the expressions are correctly parenthesized, or whether something is falsely indented? 
 
 The same example, but with one closing parenthesis missing:
 

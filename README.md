@@ -65,7 +65,7 @@ Of course, with a decent amount of parentheses being outright invisible, it coul
 
 ![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
 
-Examples are in Racket but this should work for all Lisps. A larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
+A larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
 
 ```lisp
  defparameter *grammar*

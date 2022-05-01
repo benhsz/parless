@@ -32,7 +32,7 @@ Would appear as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
 
-But how to tell the expressions are correctly parenthesized, or whether something is falsely indented? 
+With code being visualized as such, how to tell the expressions are correctly parenthesized, or whether something is falsely indented? 
 
 The same example, but with one closing parenthesis missing:
 

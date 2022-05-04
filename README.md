@@ -14,7 +14,7 @@ First, the non-features:
 
 That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 
-The goal is to make working with Lisp code more pleasant by having the editor variously visualize parentheses as:
+The plugin aims to make working with Lisp code more pleasant by having the editor variously visualize parentheses as:
 
 1. Whitespace
 2. Padding characters

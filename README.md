@@ -59,7 +59,7 @@ Or with the right amount of parentheses but false indentation:
       ▹* n (factorial (sub1 n)
 ```
 
-What allows the parentheses to be visually omitted without introducing ambiguity is the availability of these visual cues. These will only visualize when something's amiss (e.g. a missing closing parenthesis). If everything is in order (balanced parentheses, correct indentation) these cues will not visualize, and so the code will look clean, but unambiguous as well.
+What allows the parentheses to be visually omitted without introducing ambiguity is the availability of these visual cues. They will only visualize when certain conditions are met (e.g. a missing closing parenthesis). Once everything is in order (balanced parentheses, correct indentation) the code will appear clean and unambiguous.
 
 Of course, with a decent amount of parentheses being outright invisible, it could be awkward if the user wishes to manually select and edit code as text with the cursor. For that reason, parentheses will re-appear with the presence of a cursor, be it text or mouse cursor, as in this animated mockup:
 

@@ -16,9 +16,9 @@ That means the programmer will type just as many parentheses as before. It shoul
 
 The plugin aims to make working with Lisp code more pleasant by having the editor variously visualize parentheses as:
 
-1. Whitespace
+1. 'Imbalanced parenthesis' characters
 2. 'Padding' characters
-3. 'Imbalanced parenthesis' characters
+3. Whitespace
 
 For instance, this code:
 

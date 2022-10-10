@@ -18,7 +18,7 @@ The plugin aims to make working with Lisp code more pleasant by having the edito
 
 1. 'Imbalanced parenthesis' characters
 2. 'Padding' characters
-3. Whitespace
+3. Space characters
 
 For instance, this code:
 

@@ -37,7 +37,7 @@ With code being visualized as such, how to tell the expressions are correctly pa
 The same example, but with one closing parenthesis missing:
 
 ```racket
-▪define (factorial n)
+◖define (factorial n)
    if ▹zero? n
       1
       ▹* n (factorial (sub1 n)
@@ -45,10 +45,10 @@ The same example, but with one closing parenthesis missing:
 Four missing closing parentheses:
 
 ```racket
-▪define (factorial n)
-  ▪if ▹zero? n
+◖define (factorial n)
+  ◖if ▹zero? n
       1
-      ▪* n ▪factorial (sub1 n)
+      ◖* n ◖factorial (sub1 n)
 ```
 Or with the right amount of parentheses but false indentation:
 

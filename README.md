@@ -12,13 +12,13 @@ First, the non-features:
 * No significant indentation
 * No syntax changes of any kind
 
-That means the programmer will type just as many opening and closing parentheses as before. It should therefore be __compatible with all existing Lisp code__.
+That means the programmer will type just as many parentheses as before. It should therefore be __compatible with all existing Lisp code__.
 
 The plugin aims to make working with Lisp code more pleasant by having the editor variously visualize parentheses as:
 
 1. Whitespace
-2. Padding characters
-3. Unfinished expression characters
+2. 'Padding' characters
+3. 'Imbalanced parenthesis' characters
 
 For instance, this code:
 

@@ -1,7 +1,7 @@
 # Parless
 Parless is a DrRacket plugin that aims to implement Adaptive Code Visualization, first described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
 
-The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
+The goal is to improve the user experience of programming languages with parenthesized syntax, such as Racket, Scheme, Common Lisp, etc.
 
 ## Work In Progress
 No working implementation as of yet.

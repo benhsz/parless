@@ -17,7 +17,6 @@ More specifically, the functionality could variously visualize parentheses as:
 1. 'Imbalanced parenthesis' characters
 2. 'Padding' characters
 3. Space characters
-4. Dots
 
 How parless goes about re-dressing parentheses depends on the formatting and structure of the code, and user configuration.
 

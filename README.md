@@ -34,7 +34,7 @@ For example, visualizing parentheses here as space characters would be ambiguous
       cons 3 '()
 ```
 
-Then again, if each expression were on its own line and __not__ indented, parentheses would again be the more appropriate visualization:
+If each expression were on its own line and __not__ indented, parentheses would again be the more appropriate visualization:
 
 ```racket
 (cons 1

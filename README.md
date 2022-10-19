@@ -1,24 +1,53 @@
 # Parless
-Parless is a DrRacket plugin that implements Adaptive Code Visualization, first described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
+Parless is a DrRacket plugin that aims to implement Adaptive Code Visualization, first described in this [blog post](https://benhsz.github.io/my-answer-to-the-parenthesis-problem/). 
 
 The goal is to improve the user experience of Lisp-like programming languages, such as Racket, Scheme, Common Lisp, etc.
 
 ## Work In Progress
-No working implementation as of yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature. Steps completed: 0/7
+No working implementation as of yet, although the [implementation plan](steps-to-implement.md) describes the steps necessary to implement this feature.
 
 ## What Does It Do?
-First, the non-features: 
 
-* No significant indentation
-* No syntax changes of any kind
+__Parless aims to provide an alternative view of Lisp code__. Or rather, an enhanced view of Lisp code. The idea is that the editor re-dresses parentheses. This would (hopefully) make Lisp code easier to read and write. 
 
-That means the programmer will type just as many parentheses as before. It should therefore be __compatible with all existing Lisp code__.
+The functionality is similar to syntax highlighting in that it changes the appearance of code but not the actual syntax.
 
-The plugin aims to make working with Lisp code more pleasant by having the editor variously visualize parentheses as:
+More specifically, the functionality could variously visualize parentheses as:
 
 1. 'Imbalanced parenthesis' characters
 2. 'Padding' characters
 3. Space characters
+4. Dots
+
+How parless goes about re-dressing parentheses depends on the formatting and structure of the code, and user configuration.
+
+For example, visualizing parentheses here as space characters would be ambiguous:
+
+```racket
+ cons 1  cons 2  cons 3 '()
+ ```
+ 
+ But not if each expression were on its own line and indented:
+ 
+ ```racket
+  cons 1
+    cons 2
+      cons 3 '()
+```
+
+Then again, if each expression were on its own line and __not__ indented, parentheses would again be the more appropriate visualization:
+
+```racket
+(cons 1
+(cons 2
+(cons 3 '())))
+```
+
+Editors already keep track of how code is formatted and structured. Parless uses that information to dynamically provide the appropriate view.
+
+Note that while some examples and mock-ups below may look very similar to other attemps to change Lisp code (i.e. sweet-expressions) parless does *not* involve any syntax changes such as significant indentation. This mean the programmer will input just as many parentheses as before. The alternative view parless provides should be compatible with all existing Lisp code.
+
+## Examples & Mock-ups
 
 For instance, this code:
 
@@ -28,11 +57,9 @@ For instance, this code:
       1
       (* n (factorial (sub1 n)))))
 ```
-Would appear as:
+Could be re-dressed as:
 
 ![example code](https://benhsz.github.io/images/parless/parless.png)
-
-With code being visualized as such, how to tell the expressions are correctly parenthesized, or whether something is falsely indented? 
 
 The same example, but with one closing parenthesis missing:
 
@@ -61,9 +88,20 @@ Or with the right amount of parentheses but false indentation:
 
 What allows the parentheses to be visually omitted without introducing ambiguity is the availability of these visual cues. They will only visualize when certain conditions are met (e.g. a missing closing parenthesis). Once everything is in order (balanced parentheses, correct indentation) the code will appear clean and unambiguous.
 
-Of course, with a decent amount of parentheses being outright invisible, it could be awkward if the user wishes to manually select and edit code as text with the cursor. For that reason, hidden parentheses will re-appear with the presence of a mouse cursor, as in this animated mockup:
+With a decent amount of parentheses being outright invisible, it could be awkward if the user wishes to manually select and edit code as text with the cursor. One possibility is to have hidden parentheses re-appear with the presence of a mouse cursor, as in this animated mockup:
 
 ![animation](https://benhsz.github.io/images/parless/mouse-over.gif)
+
+Parless could also provide options to configure the view. 
+
+If the above examples were too minimalist, you could have parentheses turn into dots instead of whitespace.
+
+```racket
+·define (factorial n)
+  ·if ·zero? n·
+      1
+      ·* n (factorial (sub1 n)····
+```
 
 A larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
 
@@ -112,10 +150,6 @@ A larger example in Common Lisp (source from http://norvig.com/python-lisp.html)
   "Choose an element from a list at random."
    elt choices (random (length choices)
   ```
-  
-More details and examples are in the [implementation plan](steps-to-implement.md) and the above linked blog post.
-
-Another way to think about what this is, is to think of a file explorer. A file explorer shows files and provides different views, such as list or thumbnail view. Changing the view doesn't change the files. In this case, you have an editor and code. This plugin is to __provide the editor with another view of the code__. The code itself doesn't change at all. It's similar to syntax highlighting in that regard.
 
 ## License
 [MIT License](LICENSE)

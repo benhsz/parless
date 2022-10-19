@@ -44,7 +44,7 @@ If each expression were on its own line and __not__ indented, parentheses would 
 
 Editors already keep track of how code is formatted and structured. Parless uses that information to dynamically provide the appropriate view.
 
-Note that while some examples and mock-ups below may look very similar to other attemps to change Lisp code (i.e. sweet-expressions) parless does *not* involve any syntax changes such as significant indentation. This mean the programmer will input just as many parentheses as before. The alternative view parless provides should be compatible with all existing Lisp code.
+Note that while some examples and mock-ups below may look very similar to other attemps to change Lisp code (i.e. sweet-expressions) parless does not involve any syntax changes such as significant indentation. This mean the programmer will input just as many parentheses as before. The alternative view parless provides should be compatible with all existing Lisp code.
 
 ## Examples & Mock-ups
 

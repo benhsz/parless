@@ -22,7 +22,7 @@ When the expression is finished, the shape will turn into `(`.
 
     (define X 5)
     
-This means that `(` will only visualize when there's a matching closing parens. Same goes for ')'.
+This means that `(` will only visualize when there's a matching closing parens. Same goes for `)`.
 
 It may not be necessary to have distinct shapes for opening and closing parens, so you could one shape for both opening and closing parens.
 

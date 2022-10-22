@@ -8,7 +8,7 @@ Given that the first layer is always used it seems look a good place to start th
 
 Visualize imbalanced parentheses as alternative characters.
 
-Decide on an appropriate shape, such as `◖` and `◗`. (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
+Decide on alternative characters, such as `◖` and `◗`. (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
 
 From
 

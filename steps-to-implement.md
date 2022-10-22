@@ -88,6 +88,8 @@ could appear as
 
 Make parentheses that satisfy the right conditions appear as space characters. If these conditions are not satisfied, `()` will remain as `()`.
 
+Note: the conditions may need to be fine-tuned.
+
 For expressions formatted on a single-line, the conditions are:
 1. `(` and `)` are respectively the first and last characters on the line
 2. It is not a sub-expression.

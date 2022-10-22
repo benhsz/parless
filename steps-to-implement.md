@@ -32,9 +32,33 @@ So it may not even be necessary to distinguish whether that imbalanced parens is
 
 Note: an exception may have to be made for parens when they are part of a string i.e. `"("` should show `"("` not `"◖"`.
 
+# Step 2
+
+Don't show closing parentheses pile-ups.
+
+If `(` are all visualized, it means the right amount closing parens are already there, so there's no need to show them anymore.
+
+    (define (factorial n)
+      (if (zero? n)
+          1
+          (* n (factorial (sub1 n)))))
+          
+would look like
+
+    (define (factorial n)
+      (if (zero? n)
+          1
+          (* n (factorial (sub1 n)
+          
+Note: it will take some experimenting to figure out the editor behaviour. Is it necessary to visualize those pile-ups again if the user wishes to edit the code, or can always hide them at all times? If not, they would have to re-appear with the presence of a mouse or text cursor.
+
+Also, if some closing parentheses are on their own line, it may be best to not hide them. Or maybe just show one instead of all of them.
+
+
 # Step 3
 
 Provide visual cues to point out atypical indentation.
+This is in preparation for the next step.
 It could be as simple as just having arrows to point it out, such as →
 
 For example
@@ -76,20 +100,10 @@ With this code
     (define (factorial n)
       (if (zero? n)
           1
-          (* n (factorial (sub1 n)))))
+          (* n (factorial (sub1 n)
  
  The result would be
  
-     define (factorial n)
-       if (zero? n)
-          1
-          (* n (factorial (sub1 n)))))
-
-Any closing parentheses after the last expression should also be made blank.
-For the above example that would be all closing parentheses after `(sub1 n)`.
-
-The result would then be
-
      define (factorial n)
        if (zero? n)
           1
@@ -106,26 +120,6 @@ After having completed step 3, it would look like this:
     ←define Y 4
 
 # Step 5
-
-If a cursor is present on a line (either text cursor or mouse cursor), the parentheses made blank in step 3 should re-appear, slightly faded-out, on that line.
-
-So without a cursor anywhere you should see this:
-
-     define (factorial n)
-       if (zero? n)
-          1
-          (* n (factorial (sub1 n)
-          
-But then with a cursor present, for instance on the first line, it would show
-
-    (define (factorial n)
-
-And so on.
-
-If either `(` or `)` is selected, that parens as well as its matching parens would become fully visible.
-For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer blank as well.
-
-# Step 6
 
 Experiment with the list-like formatting: have `(` appear as another shape, such as `▹` or `|` and have its closing paren appear blank. 
 
@@ -159,14 +153,14 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
-# Step 7
+# Step 6
 
 The next step could be to provide customization options for the user, such as being able to:
 - Choose the shape for unfinished opening parens
 - Adjust what the editor should consider 'unexpected indentation' and what the cues should look like
 - Decide whether parentheses in commented-out code should be affected ('no' as default?)
 
-# Step 8
+# Step 7
 
 Experiment further.
 

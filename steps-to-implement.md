@@ -24,19 +24,17 @@ When the expression is finished, the shape will turn into `(`.
     
 This means that `(` will only visualize when there's a matching closing parens. Same goes for `)`.
 
-It may not be necessary to have distinct shapes for opening and closing parens, so you could one shape for both opening and closing parens.
+It may not be necessary to be able to distinguish imbalanced opening and closing parens, so you could one shape for both.
 
 So that `(...` would look like `●...` and `(...))` would look like `(...)●`.
 
-So it may not even be necessary to distinguish whether that imbalanced parens is opening or closing, as long as it stands out.
-
-Note: an exception may have to be made for parens when they are part of a string i.e. `"("` should show `"("` not `"◖"`.
+Note: an exception may have to be made for parens when they are part of a string i.e. `"("` should show `"("` not `"●"`.
 
 # Step 2
 
-Don't show closing parentheses pile-ups.
+Stop showing closing parentheses pile-ups and visualize them as ` ` (whitespace character) instead.
 
-If `(` are all visualized, it means the right amount closing parens are already there, so there's no need to show them anymore.
+If `(` are all visualized, it means the right amount closing parens are already there, so you can safely hide them.
 
     (define (factorial n)
       (if (zero? n)
@@ -50,15 +48,17 @@ would look like
           1
           (* n (factorial (sub1 n)
           
-Note: it will take some experimenting to figure out the editor behaviour. Is it necessary to visualize those pile-ups again if the user wishes to edit the code, or can always hide them at all times? If not, they would have to re-appear with the presence of a mouse or text cursor.
+Note: it will take some experimenting to figure out the editor behavior. Is it necessary to visualize those pile-ups again if the user wishes to edit the code, or can always hide them at all times? If not, they would have to re-appear with the presence of a mouse or text cursor.
 
-Also, if some closing parentheses are on their own line, it may be best to not hide them. Or maybe just show one instead of all of them.
+Also, if some closing parentheses are on their own line, it may be best to not hide them.
 
 
 # Step 3
 
 Provide visual cues to point out atypical indentation.
+
 This is in preparation for the next step.
+
 It could be as simple as just having arrows to point it out, such as →
 
 For example
@@ -109,23 +109,25 @@ With this code
           1
           (* n (factorial (sub1 n)
           
-The last example in step 2 was this:
+The last example in step 3 was:
 
-    (define X 5)
-    ←define Y 4
+    (define X 1)
+    ←define Y 2
 
-After having completed step 3, it would look like this:
+After having completed this step, it would look like:
 
-     define X 5 
-    ←define Y 4
+     define X 1 
+    ←define Y 2
 
 # Step 5
 
-Experiment with the list-like formatting: have `(` appear as another shape, such as `▹` or `|` and have its closing paren appear blank. 
+Experiment with the list-like formatting: have `(` appear as another character, such as `▹` or `|` and have its closing paren appear as ` `.
+
+Note: the conditions may need to be fine-tuned.
 
 The conditions are:
 1. It is part of another expression
-2. It is formatted on a one line
+2. It is formatted on one line
 
 After that, it should satisfy either the first set of conditions or the second set. 
 
@@ -185,9 +187,4 @@ For example
 If it does look too strange, it might be best to just visually match the closing parens.
 
      one (two (three (four))) (two (three (four)))
-
-Another possibility to avoid that visual imbalance could be to fade out the first `))` rather than make them blank.
-
-     one (two (three (four).. (two (three (four)
      
-With `..` being where the faded-out `))` should be.

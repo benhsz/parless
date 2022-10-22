@@ -90,6 +90,7 @@ Make parentheses that satisfy the right conditions appear as space characters. I
 
 For expressions formatted on a single-line, the conditions are:
 1. `(` and `)` are respectively the first and last characters on the line
+2. It is not a sub-expression.
 
 For expressions formatted on more than one line, the conditions are:
 1. `(` is the first character on the line

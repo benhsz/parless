@@ -1,79 +1,71 @@
-Completing steps 1 through 4 is likely enough to make it close to feature complete.
+The full functionality involves two fundamental layers. The first is something like a code-in-progress layer that renders imbalanced parentheses as alternative characters. The second layer is something of an indentation layer to show atypical indentation. It's assumed code is indented as normal but this second layer is needed for the cleanest view that can be achieved with parless.
 
-Finishing the steps beyond that is primarily to tidy things up a bit.  
+Some kind of user configuration will also be needed eventually, the same way editors let you choose a color scheme for syntax highlighting.
+
+Given that the first layer is always used it seems look a good place to start there.
 
 # Step 1
 
-Give opening parentheses with no closing counterparts a different appearance.
+Visualize imbalanced parentheses as alternative characters.
 
-Decide on an appropriate shape, such as `●, ▯, ▮, ◖` or `┃` (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
+Decide on an appropriate shape, such as `◖` and `◗`. (see: https://en.wikipedia.org/wiki/Geometric_Shapes)
 
-The result is to have that shape show up when you type `(` in the editor.
-
-Code would go from looking like this
+From
 
     (define X
 
 to
 
-    ●define X
+    ◖define X
 
 When the expression is finished, the shape will turn into `(`.
 
     (define X 5)
     
-This means that `(` will only visualize when there's a matching closing parens. 
+This means that `(` will only visualize when there's a matching closing parens. Same goes for ')'.
 
-# Step 2
+It may not be necessary to have distinct shapes for opening and closing parens, so you could one shape for both opening and closing parens.
 
-Provide visual cues to point out unexpected indentation.
-Decide what 'unexpected' indentation is, and decide on the kind of cues.
-Initial step could be to just use simple arrow shapes, such as →
+So that `(...` would look like `●...` and `(...))` would look like `(...)●`.
 
-It might also be best to start out with a 'strict' version of indentation, i.e. any code that deviates
-from what DrRacket considers proper indentation would show an arrow.
+So it may not even be necessary to distinguish whether that imbalanced parens is opening or closing, as long as it stands out.
 
-Also decide what exactly the cues are supposed to point out.
-
-For example
-
-    (define X 5)
-      (define Y 4)
-
-could appear as
-
-    (define X 5)
-    → (define Y 4)
-    
-Then it would say something like 'this has been indented too far'.
-
-Where as if it were to show an arrow like this
-
-    (define X 5)
-    ← (define Y 4)
-    
-Then it would say 'this belongs over there', and the presence of the arrow itself is enough to let the programmer know it's been indented incorrectly. 
-
-The latter case might be preferable for being more informative.
-
-Another example
-
-    (define X 5)
-     define Y 4
-
-This should appear as
-
-    (define X 5)
-    ←define Y 4
-
+Note: an exception may have to be made for parens when they are part of a string i.e. `"("` should show `"("` not `"◖"`.
 
 # Step 3
 
-Make parentheses that satisfy the right conditions appear as ` ` (blank). If these conditions are not satisfied, `()` will remain as `()`.
+Provide visual cues to point out atypical indentation.
+It could be as simple as just having arrows to point it out, such as →
+
+For example
+
+    (define X 1)
+      (define Y 2)
+
+could appear as
+
+    (define X 1)
+    → (define Y 2)
+    
+The arrow would then say something like 'this has been indented to there when it would normally be here'.
+
+And this
+
+    (define X 1)
+     define Y 2
+
+could appear as
+
+    (define X 1)
+    →define Y 2
+
+
+# Step 4
+
+Make parentheses that satisfy the right conditions appear as ` ` (whitespace character). If these conditions are not satisfied, `()` will remain as `()`.
 
 For expressions formatted on a single-line, the conditions are:
 1. `(` and `)` are respectively the first and last characters on the line
-2. It is not part of another expression
 
 For expressions formatted on more than one line, the conditions are:
 1. `(` is the first character on the line
@@ -113,7 +105,7 @@ After having completed step 3, it would look like this:
      define X 5 
     ←define Y 4
 
-# Step 4
+# Step 5
 
 If a cursor is present on a line (either text cursor or mouse cursor), the parentheses made blank in step 3 should re-appear, slightly faded-out, on that line.
 
@@ -133,7 +125,7 @@ And so on.
 If either `(` or `)` is selected, that parens as well as its matching parens would become fully visible.
 For example if the very first opening parenthesis is selected from the above code, it would also cause the very last closing parenthesis to be no longer blank as well.
 
-# Step 5
+# Step 6
 
 Experiment with the list-like formatting: have `(` appear as another shape, such as `▹` or `|` and have its closing paren appear blank. 
 
@@ -167,14 +159,14 @@ would appear as
           1
           ▹* n (factorial (sub1 n)
 
-# Step 6
+# Step 7
 
 The next step could be to provide customization options for the user, such as being able to:
 - Choose the shape for unfinished opening parens
 - Adjust what the editor should consider 'unexpected indentation' and what the cues should look like
 - Decide whether parentheses in commented-out code should be affected ('no' as default?)
 
-# Step 7
+# Step 8
 
 Experiment further.
 

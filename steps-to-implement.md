@@ -1,4 +1,4 @@
-The full functionality involves two fundamental layers. The first is something like a code-in-progress layer that renders imbalanced parentheses as alternative characters. The second layer is something of an indentation layer to show atypical indentation. It's assumed code is indented as normal but this second layer is needed for the cleanest view that can be achieved with parless.
+The full functionality involves two fundamental layers. The first is a code-in-progress layer that renders imbalanced parentheses as alternative characters. The second is an indentation layer that shows atypical indentation. It's assumed code is indented as normal but this second layer is needed for the cleanest view that can be achieved with parless.
 
 Some kind of user configuration will also be needed eventually, the same way editors let you choose a color scheme for syntax highlighting.
 

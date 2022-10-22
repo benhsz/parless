@@ -86,7 +86,7 @@ could appear as
 
 # Step 4
 
-Make parentheses that satisfy the right conditions appear as ` ` (whitespace character). If these conditions are not satisfied, `()` will remain as `()`.
+Make parentheses that satisfy the right conditions appear as space characters. If these conditions are not satisfied, `()` will remain as `()`.
 
 For expressions formatted on a single-line, the conditions are:
 1. `(` and `)` are respectively the first and last characters on the line
